@@ -1,0 +1,6 @@
+framework module Pods_MorseKeyboard {
+  umbrella header "Pods-MorseKeyboard-umbrella.h"
+
+  export *
+  module * { export * }
+}

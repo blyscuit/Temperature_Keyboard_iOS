@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="bMl-Sb-wKn" userLabel="View" customClass="MorseKeyboardView" customModule="MorseCoder" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2w-m8-woJ" customClass="KeyboardButton" customModule="MorseCoder" customModuleProvider="target">
+                    <rect key="frame" x="326" y="203" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="n9r-kQ-Roi"/>
+                    </constraints>
+                    <state key="normal" image="Backspace">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="deletePressed" destination="bMl-Sb-wKn" eventType="touchUpInside" id="nNA-fn-D1Z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BTN-eo-qVW" customClass="KeyboardButton" customModule="MorseCoder" customModuleProvider="target">
+                    <rect key="frame" x="55" y="203" width="265" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="4Zf-9A-VQH"/>
+                    </constraints>
+                    <state key="normal" title="space">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="spacePressed" destination="bMl-Sb-wKn" eventType="touchUpInside" id="e9A-FH-YDd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-4e-Bbc" customClass="KeyboardButton" customModule="MorseCoder" customModuleProvider="target">
+                    <rect key="frame" x="4" y="203" width="45" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="GJy-b0-bnK"/>
+                        <constraint firstAttribute="height" constant="45" id="Q0m-qA-haf"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="kwc-vT-Pa0"/>
+                        <constraint firstAttribute="width" constant="45" id="luU-Vb-6n7"/>
+                    </constraints>
+                    <state key="normal" image="NextKeyboard"/>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="PLc-Qb-Kzh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="36"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="bnh-dZ-pBi"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IgX-i4-uNh">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fXE-5I-96I">
+                    <rect key="frame" x="4" y="44" width="367" height="151"/>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="BTN-eo-qVW" firstAttribute="leading" secondItem="edC-ud-u82" secondAttribute="leading" priority="750" constant="4" id="3Hi-2A-xzZ"/>
+                <constraint firstItem="edC-ud-u82" firstAttribute="trailing" secondItem="fXE-5I-96I" secondAttribute="trailing" constant="4" id="4t8-Tx-lxN"/>
+                <constraint firstItem="fXE-5I-96I" firstAttribute="leading" secondItem="edC-ud-u82" secondAttribute="leading" constant="4" id="6fp-8l-ZjN"/>
+                <constraint firstItem="e2w-m8-woJ" firstAttribute="top" secondItem="fXE-5I-96I" secondAttribute="bottom" constant="8" symbolic="YES" id="6mh-LK-VQi"/>
+                <constraint firstItem="BTN-eo-qVW" firstAttribute="bottom" secondItem="e2w-m8-woJ" secondAttribute="bottom" id="7lQ-ij-Ck5"/>
+                <constraint firstItem="PLc-Qb-Kzh" firstAttribute="top" secondItem="edC-ud-u82" secondAttribute="top" id="JYa-vR-2EZ"/>
+                <constraint firstItem="edC-ud-u82" firstAttribute="bottom" secondItem="8Pb-4e-Bbc" secondAttribute="bottom" constant="5" id="Ocf-cn-aUz"/>
+                <constraint firstItem="e2w-m8-woJ" firstAttribute="leading" secondItem="BTN-eo-qVW" secondAttribute="trailing" constant="6" id="Qnp-IJ-Njb"/>
+                <constraint firstItem="PLc-Qb-Kzh" firstAttribute="leading" secondItem="edC-ud-u82" secondAttribute="leading" id="SBs-fc-aVZ"/>
+                <constraint firstItem="edC-ud-u82" firstAttribute="trailing" secondItem="PLc-Qb-Kzh" secondAttribute="trailing" id="WhC-5c-IV3"/>
+                <constraint firstItem="e2w-m8-woJ" firstAttribute="height" secondItem="BTN-eo-qVW" secondAttribute="height" id="X58-be-w3B"/>
+                <constraint firstItem="edC-ud-u82" firstAttribute="bottom" secondItem="BTN-eo-qVW" secondAttribute="bottom" constant="5" id="Y4o-8E-n5T"/>
+                <constraint firstItem="BTN-eo-qVW" firstAttribute="leading" secondItem="8Pb-4e-Bbc" secondAttribute="trailing" constant="6" id="a9U-RG-MUM"/>
+                <constraint firstItem="edC-ud-u82" firstAttribute="trailing" secondItem="e2w-m8-woJ" secondAttribute="trailing" constant="4" id="tHY-s9-i2i"/>
+                <constraint firstItem="fXE-5I-96I" firstAttribute="top" secondItem="PLc-Qb-Kzh" secondAttribute="bottom" constant="8" symbolic="YES" id="v6k-wX-gjY"/>
+                <constraint firstItem="8Pb-4e-Bbc" firstAttribute="leading" secondItem="edC-ud-u82" secondAttribute="leading" constant="4" id="yOH-LI-Ub5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="edC-ud-u82"/>
+            <connections>
+                <outlet property="deleteButton" destination="e2w-m8-woJ" id="Uxb-6j-bgR"/>
+                <outlet property="nextKeyboardButton" destination="8Pb-4e-Bbc" id="thb-gp-vWj"/>
+                <outlet property="predictCollectionView" destination="PLc-Qb-Kzh" id="c5N-1S-kUE"/>
+                <outlet property="spaceButtonToNextKeyboardConstraint" destination="a9U-RG-MUM" id="i3Y-NM-TOG"/>
+                <outlet property="spaceButtonToParentConstraint" destination="3Hi-2A-xzZ" id="Dni-Em-wea"/>
+                <outlet property="stackView" destination="fXE-5I-96I" id="jKi-Ar-rJj"/>
+            </connections>
+            <point key="canvasLocation" x="39.200000000000003" y="256.82158920539734"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Backspace" width="24" height="18"/>
+        <image name="NextKeyboard" width="19" height="19"/>
+    </resources>
+</document>
